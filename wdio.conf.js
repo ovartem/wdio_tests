@@ -54,7 +54,7 @@ exports.config = {
     capabilities: [{
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
-        // browserVersion: 'stable',
+        browserVersion: 'stable',
         'goog:chromeOptions': {
             args: [
                 process.env.CI ? '--headless' : '--no-headless',
