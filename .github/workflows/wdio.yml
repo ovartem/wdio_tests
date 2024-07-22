@@ -10,8 +10,6 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - name: Install Chromium
-        run: sudo apt-get install chromium-browser
       - name: Get code
         uses: actions/checkout@v4
       - name: Install Node JS
