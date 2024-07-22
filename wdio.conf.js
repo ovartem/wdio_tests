@@ -54,7 +54,17 @@ exports.config = {
     capabilities: [{
         // capabilities for local browser web tests
         browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
-        browserVersion: 'stable',
+        // browserVersion: 'stable',
+        'goog:chromeOptions': {
+            args: [
+                process.env.CI ? '--headless' : '--no-headless',
+                '--no-sandbox',
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--verbose',
+                '--window-size=1920,1080',
+            ],
+        },
     }],
     //
     // ===================
