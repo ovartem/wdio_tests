@@ -1,18 +1,28 @@
 const { BaseSwagLabPage } = require('./BaseSwagLab.page');
 
-class ShopingCartPage extends BaseSwagLabPage {
+class ShoppingCartPage extends BaseSwagLabPage {
     url = '/cart.html';
 
     cartItemSelector = '.cart_item';
 
     removeItemSelector = '[id^="remove"]';
 
-    get headerTitle() { return $('.title'); }
+    get headerTitle() {
+        return $('.title');
+    }
 
-    get cartItems() { return $$(this.cartItemSelector); }
+    get cartItems() {
+        return $$(this.cartItemSelector);
+    }
 
     // async below added to show the function returns a promise
-    async getCartItemByName(name) { return $(`${this.cartItemSelector}=${name}`); }
+    async getCartItemByName(name) {
+        return $(`${this.cartItemSelector}=${name}`);
+    }
+
+    async getCartItemById(id) {
+        await this.cartItems[id];
+    }
 
     async removeCartItemByName(name) {
         const item = await this.getCartItemByName(name);
@@ -24,4 +34,4 @@ class ShopingCartPage extends BaseSwagLabPage {
     }
 }
 
-module.exports = { ShopingCartPage };
+module.exports = { ShoppingCartPage };

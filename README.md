@@ -11,11 +11,13 @@ npm install
 ## Usage
 
 ### Launch tests:
+
 ```bash
 npm run wdio
 ```
 
 ### Run eslint rules and fix errors if possible:
+
 ```bash
 npm run lint
 ```
